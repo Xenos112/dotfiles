@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hibernateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#31748f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a6478;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M32 48 Q48 32 64 48 Q80 32 96 48 Q80 64 64 48 Q48 64 32 48" fill="url(#hibernateGrad)"/>
+  <path d="M32 80 Q48 64 64 80 Q80 64 96 80 Q80 96 64 80 Q48 96 32 80" fill="url(#hibernateGrad)" opacity="0.7"/>
+  <circle cx="64" cy="64" r="4" fill="url(#hibernateGrad)"/>
+</svg>

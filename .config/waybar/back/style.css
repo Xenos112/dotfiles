@@ -1,0 +1,257 @@
+@import "./rose-pine.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Propo Font";
+  font-size: 14px;
+  font-weight: 600;
+}
+
+window#waybar {
+  background-color: transparent;
+  color: @text;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+window#waybar.termite {
+  background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+  background-color: #000000;
+  border: none;
+}
+
+
+.modules-right,
+.modules-center,
+.modules-left {
+  border-radius: 7px;
+  margin: 4px;
+}
+
+#workspaces {
+  background: alpha(@base, 0.6);
+  border-radius: 7px;
+  padding: 4px;
+}
+
+button {
+  box-shadow: 0 0 transparent;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button {
+  padding: 0 4px;
+  color: @muted;
+  background-color: transparent;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+#workspaces button:hover {
+  color: @pine;
+  background: transparent;
+}
+
+#workspaces button.active {
+  color: @text;
+}
+
+#workspaces button.focused {
+  color: @foam;
+}
+
+#workspaces button.urgent {
+  color: @love;
+}
+
+#mode {
+  background-color: #64727D;
+}
+
+#clock,
+#battery,
+#custom-power,
+#cpu,
+#disk,
+#backlight,
+#network,
+#custom-bluetooth,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#mpris,
+#tray,
+#mode,
+#scratchpad,
+#mpd,
+#custom-launcher,
+#custom-power {
+  padding: 5px 10px;
+  color: @text;
+  background: alpha(@base, 0.6);
+}
+
+#network {
+  border-radius: 7px 0 0 7px;
+  color: @iris;
+}
+
+#battery {
+  border-radius: 0 7px 7px 0;
+  margin-right: 5px;
+  color: @pine;
+}
+
+#pulseaudio {
+  color: @rose;
+  border-radius: 0 7px 7px 0;
+}
+
+
+#backlight {
+  border-radius: 7px 0 0 7px;
+  color: @iris;
+}
+
+#custom-power {
+  border-radius: 0 7px 7px 0;
+}
+
+
+
+#battery.charging,
+#battery.plugged {
+  color: @pine;
+}
+
+#battery.warning {
+  color: @gold;
+}
+
+@keyframes blink {
+  to {
+    color: @love;
+  }
+}
+
+#battery.critical:not(.charging) {
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+  padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+  color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+  color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+  color: #000000;
+}
+
+#wireplumber.muted {
+  background-color: #f53c3c;
+}
+
+#custom-media {
+  background-color: #66cc99;
+  min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+  background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+  background-color: #ffa000;
+}
+
+
+#tray {
+  /*background-color: alpha(@pine, 0.2);*/
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+
+#mpd {
+  background-color: #66cc99;
+}
+
+#mpd.disconnected {
+  background-color: #f53c3c;
+}
+
+#mpd.stopped {
+  background-color: #90b1b1;
+}
+
+#mpd.paused {
+  background-color: #51a37a;
+}
+
+#scratchpad {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+  background-color: transparent;
+}
+
+#privacy {
+  padding: 0;
+}
+
+#privacy-item {
+  padding: 0 5px;
+}
+
+#privacy-item.screenshare {
+  background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+  background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+  background-color: #0069d4;
+}
+
+#custom-launcher {
+  padding: 4px;
+  border-radius: 7px;
+}
+
+
+#tray {
+  padding: 4px;
+}
+
+#mpris {
+  color: @iris;
+  border-radius: 7px;
+  margin-left: 5px;
+}

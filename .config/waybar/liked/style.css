@@ -1,0 +1,241 @@
+/* Rose Pine Color Palette */
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+@define-color highlight-low #21202e;
+@define-color highlight-med #403d52;
+@define-color highlight-high #524f67;
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(25, 23, 36, 0);
+  color: @text;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Left modules */
+#custom-arch {
+  background: linear-gradient(135deg, @pine 0%, @foam 100%);
+  color: @base;
+  padding: 0 16px;
+  margin: 4px 0 4px 8px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 16px rgba(49, 116, 143, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px @pine;
+}
+
+#custom-arch:hover {
+  background: linear-gradient(135deg, @foam 0%, @pine 100%);
+  box-shadow: 0 6px 20px rgba(49, 116, 143, 0.5);
+}
+
+#workspaces {
+  background: @surface;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(144, 140, 170, 0.2);
+}
+
+#workspaces button {
+  padding: 4px 8px;
+  margin: 0 2px;
+  border-radius: 8px;
+  color: @muted;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button:hover {
+  background: @highlight-low;
+  color: @text;
+}
+
+#workspaces button.active {
+  background: linear-gradient(135deg, @iris 0%, @love 100%);
+  color: @base;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(235, 111, 146, 0.3);
+}
+
+#workspaces button.urgent {
+  background: @love;
+  color: @base;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Center module */
+#clock {
+  background: linear-gradient(135deg, @overlay 0%, @surface 100%);
+  color: @text;
+  padding: 0 20px;
+  margin: 4px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(196, 167, 231, 0.3);
+  font-weight: bold;
+  box-shadow: 0 4px 16px rgba(26, 35, 58, 0.2);
+}
+
+#clock:hover {
+  background: linear-gradient(135deg, @surface 0%, @overlay 100%);
+  border-color: @iris;
+}
+
+/* Right modules */
+#pulseaudio,
+#pulseaudio.microphone,
+#network,
+#backlight,
+#battery,
+#tray {
+  background: @surface;
+  color: @text;
+  padding: 0 12px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  border: 1px solid rgba(144, 140, 170, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#pulseaudio:hover,
+#pulseaudio.microphone:hover,
+#network:hover,
+#backlight:hover,
+#battery:hover {
+  background: @highlight-low;
+  border-color: @subtle;
+}
+
+#battery.warning {
+  background: linear-gradient(135deg, @gold 0%, rgba(246, 193, 119, 0.2) 100%);
+  color: @base;
+  border-color: @gold;
+}
+
+#battery.critical {
+  background: linear-gradient(135deg, @love 0%, rgba(235, 111, 146, 0.2) 100%);
+  color: @base;
+  border-color: @love;
+  animation: pulse 2s infinite;
+}
+
+#battery.charging {
+  background: linear-gradient(135deg, @foam 0%, rgba(156, 207, 216, 0.2) 100%);
+  color: @base;
+  border-color: @foam;
+}
+
+#network.disconnected {
+  background: linear-gradient(135deg, @love 0%, @rose 100%);
+  color: @base;
+  border-color: @love;
+}
+
+#network.wifi {
+  background: linear-gradient(135deg, @pine 0%, rgba(49, 116, 143, 0.2) 100%);
+  color: @text;
+  border-color: @pine;
+}
+
+#pulseaudio.muted,
+#pulseaudio.microphone.muted {
+  background: @muted;
+  color: @base;
+}
+
+#tray {
+  margin-right: 8px;
+  padding: 0 8px;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @love;
+  border-radius: 8px;
+}
+
+/* Tooltips */
+tooltip {
+  background: @surface;
+  border: 2px solid @pine;
+  border-radius: 12px;
+  color: @text;
+  padding: 8px 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+tooltip label {
+  color: @text;
+}
+
+/* Scrollbar styling for tooltips */
+scrollbar slider {
+  background: @pine;
+  border-radius: 8px;
+}
+
+scrollbar trough {
+  background: @overlay;
+  border-radius: 8px;
+}
+
+/* Special effects */
+#custom-arch,
+#workspaces button.active,
+#battery.charging {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

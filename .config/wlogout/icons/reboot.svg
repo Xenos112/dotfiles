@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rebootGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ebbcba;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e5a3a1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M64 24 A40 40 0 1 1 44 36" stroke="url(#rebootGrad)" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M52 24 L64 24 L64 36" stroke="url(#rebootGrad)" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M64 88 A24 24 0 1 0 64 40" stroke="url(#rebootGrad)" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

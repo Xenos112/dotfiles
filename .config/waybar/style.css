@@ -1,0 +1,168 @@
+/* Rose Pine Waybar - Simple & Clean */
+@define-color base #191724;
+@define-color surface #1f1d2e;
+@define-color overlay #26233a;
+@define-color muted #6e6a86;
+@define-color subtle #908caa;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color gold #f6c177;
+@define-color rose #ebbcba;
+@define-color pine #31748f;
+@define-color foam #9ccfd8;
+@define-color iris #c4a7e7;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font Propo", "JetBrains Mono", sans-serif;
+  font-size: 13px;
+  min-height: 0;
+  font-weight: 600;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+.horizontal {
+  background: transparent;
+  padding: 0 10px;
+}
+
+/* Arch launcher */
+#custom-arch {
+  background: linear-gradient(90deg, alpha(@iris, 0.8), alpha(@love, 0.8));
+  border-radius: 12px;
+  color: @base;
+  font-size: 16px;
+  margin: 5px 5px 5px 0;
+  padding: 5px 12px;
+}
+
+/* Workspaces */
+#workspaces {
+  background: linear-gradient(90deg, alpha(@surface, 0.8), alpha(@overlay, 0.8));
+  border-radius: 12px;
+  margin: 5px 5px 5px 0;
+  padding: 5px;
+}
+
+#workspaces button {
+  background: transparent;
+  color: @subtle;
+  padding: 2px;
+}
+
+#workspaces button:hover {
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @base;
+}
+
+/* Window title */
+#window {
+  background: linear-gradient(90deg, alpha(@surface, 0.8), alpha(@overlay, 0.8));
+  border-radius: 12px;
+  color: @text;
+  margin: 5px;
+  padding: 5px 15px;
+}
+
+/* Clock */
+#clock {
+  background: linear-gradient(90deg, alpha(@iris, 0.8), alpha(@foam, 0.8));
+  border-radius: 12px;
+  color: @base;
+  font-weight: bold;
+  margin: 5px;
+  padding: 5px 20px;
+}
+
+/* Audio */
+#pulseaudio {
+  background: linear-gradient(90deg, alpha(@foam, 0.8), alpha(@pine, 0.8));
+  border-radius: 12px;
+  color: @base;
+  margin: 5px 2px;
+  padding: 5px 12px;
+}
+
+#pulseaudio.muted {
+  background: linear-gradient(90deg, alpha(@muted, 0.8), alpha(@subtle, 0.8));
+  color: @text;
+}
+
+/* Network */
+#network {
+  background: linear-gradient(90deg, alpha(@pine, 0.8), alpha(@foam, 0.8));
+  border-radius: 12px;
+  color: @base;
+  margin: 5px 2px;
+  padding: 5px 12px;
+}
+
+#network.disconnected {
+  background: linear-gradient(90deg, alpha(@love, 0.8), alpha(@rose, 0.8));
+}
+
+/* Battery */
+#battery {
+  background: linear-gradient(90deg, alpha(@gold, 0.8), alpha(@rose, 0.8));
+  border-radius: 12px;
+  color: @base;
+  margin: 5px 2px;
+  padding: 5px 12px;
+}
+
+#battery.charging {
+  background: linear-gradient(90deg, alpha(@foam, 0.8), alpha(@iris, 0.8));
+}
+
+#battery.warning {
+  background: linear-gradient(90deg, alpha(@gold, 0.9), alpha(@love, 0.8));
+}
+
+#battery.critical {
+  background: linear-gradient(90deg, alpha(@love, 0.9), alpha(@rose, 0.8));
+}
+
+/* System tray */
+#tray {
+  background: linear-gradient(90deg, alpha(@surface, 0.8), alpha(@overlay, 0.8));
+  border-radius: 12px;
+  margin: 5px 2px;
+  padding: 5px 8px;
+}
+
+#tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray>.active {
+  -gtk-icon-effect: highlight;
+}
+
+/* Shutdown button */
+#custom-shutdown {
+  background: linear-gradient(90deg, alpha(@love, 0.8), alpha(@rose, 0.8));
+  border-radius: 12px;
+  color: @base;
+  font-size: 15px;
+  margin: 5px 0 5px 2px;
+  padding: 5px 12px;
+}
+
+/* Tooltip */
+tooltip {
+  background: alpha(@overlay, 0.95);
+  border-radius: 8px;
+  color: @text;
+  padding: 8px;
+}
+
+tooltip label {
+  color: @text;
+}
