@@ -12,7 +12,7 @@
     "color": {
       "1": "green"
     },
-    "source": "~/.config/fastfetch/nyarch.png",
+    "source": "$(ls ~/.config/fastfetch/*.png | shuf -n 1)",
     "width": 25,
     "padding": {
       "top": 2,
