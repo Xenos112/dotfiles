@@ -27,16 +27,17 @@
     "on-click": "rofi -show drun"
   },
   "hyprland/workspaces": {
-    "format": "●",
+    "format": "{icon}",
     "on-click": "activate",
     "all-outputs": false,
     "active-only": false,
+    "format-icons": {
+      "default": "",
+      "focused": "",
+      "urgent": ""
+    },
     "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": []
+      "*": 5
     }
   },
   "hyprland/window": {
