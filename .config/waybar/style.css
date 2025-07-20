@@ -1,168 +1,111 @@
-/* Rose Pine Waybar - Simple & Clean */
-@define-color base #191724;
-@define-color surface #1f1d2e;
-@define-color overlay #26233a;
-@define-color muted #6e6a86;
-@define-color subtle #908caa;
-@define-color text #e0def4;
-@define-color love #eb6f92;
-@define-color gold #f6c177;
-@define-color rose #ebbcba;
-@define-color pine #31748f;
-@define-color foam #9ccfd8;
-@define-color iris #c4a7e7;
-
 * {
+  font-family: "JetBrains Mono Propo";
+  font-size: 13px;
+  font-weight: 600;
   border: none;
   border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font Propo", "JetBrains Mono", sans-serif;
-  font-size: 13px;
   min-height: 0;
-  font-weight: 600;
 }
 
 window#waybar {
-  background-color: transparent;
-}
-
-.horizontal {
   background: transparent;
-  padding: 0 10px;
+  color: #ffffff;
 }
 
-/* Arch launcher */
-#custom-arch {
-  background: linear-gradient(90deg, alpha(@iris, 0.8), alpha(@love, 0.8));
+.modules-left,
+.modules-center,
+.modules-right {
+  background: #1e1e2e;
   border-radius: 12px;
-  color: @base;
+  padding: 2px 8px;
+  margin: 0 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Left modules */
+#custom-launcher {
+  color: #89b4fa;
   font-size: 16px;
-  margin: 5px 5px 5px 0;
-  padding: 5px 12px;
+  padding: 0 8px;
+  margin-right: 8px;
 }
 
-/* Workspaces */
+#clock {
+  color: #cdd6f4;
+  padding: 0 8px;
+}
+
+/* Center modules */
 #workspaces {
-  background: linear-gradient(90deg, alpha(@surface, 0.8), alpha(@overlay, 0.8));
-  border-radius: 12px;
-  margin: 5px 5px 5px 0;
-  padding: 5px;
+  padding: 0;
 }
 
 #workspaces button {
+  padding: 4px 8px;
+  margin: 0 2px;
   background: transparent;
-  color: @subtle;
-  padding: 2px;
-}
-
-#workspaces button:hover {
-  color: @text;
+  color: #6c7086;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 #workspaces button.active {
-  color: @base;
+  background: #89b4fa;
+  color: #1e1e2e;
+  padding: 0 20px;
 }
 
-/* Window title */
-#window {
-  background: linear-gradient(90deg, alpha(@surface, 0.8), alpha(@overlay, 0.8));
-  border-radius: 12px;
-  color: @text;
-  margin: 5px;
-  padding: 5px 15px;
+#workspaces button:hover {
+  background: #313244;
+  color: #cdd6f4;
 }
 
-/* Clock */
-#clock {
-  background: linear-gradient(90deg, alpha(@iris, 0.8), alpha(@foam, 0.8));
-  border-radius: 12px;
-  color: @base;
-  font-weight: bold;
-  margin: 5px;
-  padding: 5px 20px;
-}
-
-/* Audio */
-#pulseaudio {
-  background: linear-gradient(90deg, alpha(@foam, 0.8), alpha(@pine, 0.8));
-  border-radius: 12px;
-  color: @base;
-  margin: 5px 2px;
-  padding: 5px 12px;
-}
-
-#pulseaudio.muted {
-  background: linear-gradient(90deg, alpha(@muted, 0.8), alpha(@subtle, 0.8));
-  color: @text;
-}
-
-/* Network */
-#network {
-  background: linear-gradient(90deg, alpha(@pine, 0.8), alpha(@foam, 0.8));
-  border-radius: 12px;
-  color: @base;
-  margin: 5px 2px;
-  padding: 5px 12px;
-}
-
-#network.disconnected {
-  background: linear-gradient(90deg, alpha(@love, 0.8), alpha(@rose, 0.8));
-}
-
-/* Battery */
+/* Right modules */
+#tray,
+#pulseaudio,
+#network,
+#bluetooth,
 #battery {
-  background: linear-gradient(90deg, alpha(@gold, 0.8), alpha(@rose, 0.8));
-  border-radius: 12px;
-  color: @base;
-  margin: 5px 2px;
-  padding: 5px 12px;
+  padding: 0 8px;
+  margin: 0 2px;
 }
 
-#battery.charging {
-  background: linear-gradient(90deg, alpha(@foam, 0.8), alpha(@iris, 0.8));
+#tray {
+  color: #cdd6f4;
+}
+
+#pulseaudio {
+  color: #a6e3a1;
+}
+
+#network {
+  color: #89b4fa;
+}
+
+#bluetooth {
+  color: #89b4fa;
+}
+
+#battery {
+  color: #a6e3a1;
 }
 
 #battery.warning {
-  background: linear-gradient(90deg, alpha(@gold, 0.9), alpha(@love, 0.8));
+  color: #f9e2af;
 }
 
 #battery.critical {
-  background: linear-gradient(90deg, alpha(@love, 0.9), alpha(@rose, 0.8));
+  color: #f38ba8;
 }
 
-/* System tray */
-#tray {
-  background: linear-gradient(90deg, alpha(@surface, 0.8), alpha(@overlay, 0.8));
-  border-radius: 12px;
-  margin: 5px 2px;
-  padding: 5px 8px;
-}
-
-#tray>.passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray>.active {
-  -gtk-icon-effect: highlight;
-}
-
-/* Shutdown button */
-#custom-shutdown {
-  background: linear-gradient(90deg, alpha(@love, 0.8), alpha(@rose, 0.8));
-  border-radius: 12px;
-  color: @base;
-  font-size: 15px;
-  margin: 5px 0 5px 2px;
-  padding: 5px 12px;
-}
-
-/* Tooltip */
+/* Tooltips */
 tooltip {
-  background: alpha(@overlay, 0.95);
+  background: #1e1e2e;
+  border: 1px solid #45475a;
   border-radius: 8px;
-  color: @text;
-  padding: 8px;
+  color: #cdd6f4;
 }
 
 tooltip label {
-  color: @text;
+  color: #cdd6f4;
 }
